@@ -9,18 +9,12 @@ int main() {
     aluno.num_matriculas = 0;
 
 
-    //vaeráveis para o usuário conseguir realizar as escolhas corretas, estão sendo iniciadas com um determinado "valor"
+    //variáveis para o usuário conseguir realizar as escolhas corretas, estão sendo iniciadas com um determinado "valor"
     int curso_min, curso_max;
     int curso_temp = 0; 
     int turno_temp = 0; 
     int continuar = 1;
 
-
-    // Vetores de histórico
-    //int turnos_matriculados[3] = {0}; 
-    //int cursos_matriculados[3] = {0}; // <--- NOVO: Guarda os cursos já feitos
-    
-   // int num_matriculas = 0; // Mudei o nome de 'num_turnos_matriculados' para ficar mais genérico
 
     printf("Bem-vindo a Escola Socratica!\n_\n");
 
@@ -34,12 +28,12 @@ int main() {
     do {
 
         int validacao_valida = 0;
-        // --- Realização da matrícula com a escolha do turno e curso ---
+        
         do {
             printf("\nOPCOES DE TURNOS\n| 1 = MANHA | 2 = TARDE | 3 = NOITE |\n");
             turno_temp = validar_inteiros("Escolha o turno: ", MANHA, NOITE);
 
-             // Mostra o menu dependendo do turno escolhido
+             //mostra as opções de curso do turno (depende de qual foi escolhido)
             if (turno_temp == MANHA || turno_temp == TARDE) {
                 printf("OPCOES DE CURSOS (Manha/Tarde)\n");
                 printf("| %d = %s | %d = %s | %d = %s |\n", CURSO_1, CURSOS[CURSO_1], CURSO_2, CURSOS[CURSO_2], CURSO_3, CURSOS[CURSO_3]);
@@ -66,7 +60,7 @@ int main() {
                 while (getchar() != '\n');
 
                 if (continuar == 0) {
-                    break; // Sai do loop e segue 
+                    break; //sai do loop e segue 
                 }
             }
         } while (validacao_valida == 0 && continuar != 0);
