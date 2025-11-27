@@ -1,0 +1,214 @@
+Nome do sistema: Organize_Student
+Público- alvo: estudantes acadêmicos.
+Principais informações do sistema: 
+•	Cadastro do Usuário (nome, cidade, curso, idade e matricula);
+•	Apresentação de cursos disponíveis para escolha;
+•	Indicação dos cursos/ matérias que o aluno deverá estudar naquele dia.
+
+Pessoas que focam em seu futuro, buscam estudar diariamente e manter seu foco para que não deixem se levar pela procrastinação. Com isso, muitos alunos acabam tendo dificuldade de se organizar e determinar quais são os conteúdos que irão estudar naquele dia. Pois, estabelecer conteúdos/matérias todos os dias, causa um cansaço mental que poderia ser gasto durante as horas de estudo.
+Desse modo, o Organize_Student oferece a oportunidade do aluno se organizar através de anotações. O sistema visa oferecer informações sobre qual curso o aluno irá estudar naquele dia, mostrando assim, as matérias presentes. Nesse contexto, para que o sistema seja útil, é necessário que o usuário informe seus dados pessoais (nome, cidade, curso, idade e matricula) para que seja registrado o seu cadastro. Em seguida, seus dados serão exibidos, também tendo a oportunidade de a pessoa escolher uma das opções de cursos mostrados na tela e, com isso, o discente verá seu curso com as suas respectivas matérias para ser estudada naquele dia. 
+Dessa forma, os acadêmicos poderão manter o foco e mais disciplina nos momentos de estudo. Pois, pouparão tempo ao ter que construir estratégias longas para organizar os conteúdos de seus respectivos cursos. Pois, é de extrema importância manter uma organização e otimização de tempo ao longo do período estudantil. 
+Requisitos Funcionais:
+1º Cadastro de Aluno (nome, idade, matrícula);
+	2º  Exibe as informações do aluno;
+	3º Exibe os cursos disponíveis;
+	4º Seleciona o curso;
+	5º Exibe as matérias de cada curso;
+	REQUISITOS NÃO FUNCIONAIS:
+	1º  Salva as informações do aluno com scanf;
+	2º  Retorna avisos ao usuário informando que a opção de curso é invalida; 
+	3º Disponibilidade de uso; 
+TIPO	Descrição	Exemplo no Sistema
+ENTRADA	Pede o nome do aluno	printf("Digite seu nome: \n");
+
+PROCESSO 	Salva no Fgets	fgets(nome, sizeof(nome), stdin);
+
+SAÍDA	Printa o nome completo	 printf("Aluno: %s\n", nome);
+
+
+TIPO	Descrição	Exemplo no Sistema
+ENTRADA	Pede a idade do aluno	printf("Digite sua idade: \n");
+
+PROCESSO 	Salva no scanf	scanf("%d", &idade);
+
+SAÍDA	Printa a idade do aluno	printf("Idade: %d\n", idade);
+ 
+
+TIPO	Descrição	Exemplo no Sistema
+ENTRADA	Pede o número da matrícula	printf("Digite sua matrícula: \n");
+
+PROCESSO 	Salva scanf	scanf("%d", &matricula);
+SAÍDA	Printa o número da matrícula	printf("Matricula: %d\n", matricula);
+
+TIPO	Descrição	Exemplo no Sistema
+ENTRADA	Pede o nome do aluno	printf("Escolha o curso: \n");
+
+PROCESSO 	Salva no scanf	scanf("%d", &curso);
+
+SAÍDA	Printa o curso e as informações	Mostra o curso selecionada através do switch(case)
+
+TIPO	DESCRIÇÃO	Exemplo no Sistema
+ENTRADA	Pergunta se o usuário deseja registrar outro aluno	printf("Deseja cadastrar outro aluno? (1 = Sim, 0 = Nao): \n");
+
+PROCESSO	Compara a opção selecionada para decidir se é verdadeiro ou falso	scanf("%d", &continuar);
+
+SAIDA	Se o usuário digitar 0 encerra o programa, se digitar 1 ele retorna para o inicio do programa registra um novo aluno.	1 = Inicia o programa novamente para registrar um novo aluno;
+0 = Finaliza o programa mostrando uma mensagem de encerramento;
+
+
+
+
+	
+
+Algoritmo "semnome"
+//
+//
+// Descrição : Este programa realiza o cadastro do aluno e faz com que eleselecione o curso que deseja, para ver suas respectivas matérias.
+// Autor(a) : Ana Clara Moreira e Andrei Lima
+// Data atual : 18/10/2025
+Var
+// Seção de Declarações das variáveis
+
+nome: caractere
+idade, matricula, curso, turno, continuar: inteiro
+
+
+Inicio
+// Seção de Comandos, procedimento, funções, operadores, etc...
+
+
+
+
+
+escreval("Bem- vindo à Escola Socrática!")
+escreval("----------------------")
+
+//Registro acadêmico
+
+escreval("Digite o seu nome: ")
+leia(nome)
+
+escreval("Digite sua idade: ")
+leia(idade)
+
+escreval("Digite sua matricula")
+leia(matricula)
+
+
+//confirmação para continuar a pesquisa.
+
+escreval("Deseja continuar? Digite 1 -> sim e 0 -> nao ")
+leia(continuar)
+
+
+//verificação
+
+//O aluno seleciona o turno em que estuda
+enquanto (continuar <> 0) faca
+escreval("TURNOS DISPONIVEIS")
+escreval("|1 = MANHÂ | 2 = TARDE | 3 = NOITE |")
+escreval("Escolha o turno: ")
+leia(turno)
+
+se (turno = 1) ou (turno = 2) entao
+
+//aqui será exposto os cursos disponpiveis em cada turno
+
+escreval("OPCOES DE CURSO")
+escreval("| 1 = CURSO_1 | 2 = CURSO_2 | 3 = CURSO_3 |")
+escreval("Escolha o curso: ")
+leia(curso)
+
+senao
+
+se (turno = 3) entao
+
+escreval("OPÇÕES DE CURSOS")
+escreval("| 4 = CURSO_4 | 5 = CURSO_5 |")
+escreval("Escolha o curso: ")
+leia(curso)
+
+senao
+escreval("TURNO INVÁLIDO!")
+escreval("_________________________________________________")
+interrompa
+fimse
+fimse
+
+//Registro acadêmico exposto ao aluno com seu cadastro completo
+
+escreval("")
+escreval("_________________________________________________")
+escreval("Aluno: ", nome)
+escreval("Idade: ", idade)
+escreval("Matrícula: ", matricula)
+
+//Assim que ele seleciona o curso, as matérias de cada curso são expostas.
+escolha curso
+
+caso 1
+
+escreval("As materias do CURSO_1 são: ")
+escreval("MATERIA_1")
+escreval("MATERIA_1")
+escreval("MATERIA_1")
+
+
+caso 2
+
+escreval("As materias do CURSO_2 são: ")
+escreval("MATERIA_2")
+escreval("MATERIA_2")
+escreval("MATERIA_2")
+
+
+caso 3
+
+escreval("As materias do CURSO_3 são: ")
+escreval("MATERIA_3")
+escreval("MATERIA_3")
+escreval("MATERIA_3")
+
+caso 4
+
+escreval("As materias do CURSO_4 são: ")
+escreval("MATERIA_4")
+escreval("MATERIA_4")
+escreval("MATERIA_4")
+
+caso 5
+
+escreval("As materias do CURSO_5 são: ")
+escreval("MATERIA_5")
+escreval("MATERIA_5")
+escreval("MATERIA_5")
+
+outrocaso
+escreval("CURSO INVÁLIDO!")
+
+fimescolha
+
+escreval("_________________________________________________")
+escreval("Cadastro concluído com sucesso!")
+
+
+//Aqui o sistema oferece a oportunidade em cadastrar outro aluno, em outro momento pode-se adicionar uma lógica no qual ele poderá inserir novos dados. Caso decidir encerrar a pesquisa. o cadastro é encerrado. 
+
+escreval("Deseja cadastrar outro aluno? (1 = Sim, 0 = Não): ")
+leia(continuar)
+fimenquanto
+
+escreval("")
+escreval("Encerrando o sistema de cadastro...")
+
+
+Fimalgoritmo
+
+
+
+	
+
+	
+ 
+ 
+

@@ -1,0 +1,33 @@
+1.	Análise do código atual.
+
+•	Seu código está muito longo? (muitas linhas em um único arquivo?)
+
+Sim, ele tinha 170 linhas.
+•	Você tem funções bem definidas ou tudo misturado?
+Funções bem definidas.
+
+•	Há dados relacionados que poderiam ser agrupados em uma estrutura?
+Sim.
+
+•	Seu código repete padrões? (ex.: sempre faz a mesma coisa com informações diferentes?)
+Não.
+
+Oportunidades de melhoria
+•	Realizamos uma mudança no qual foi criado uma struct para agrupar as variáveis que realizam o cadastro do aluno.
+•	Funções muito longas. Podem ser divididas em funções menores?
+Não.
+•	Código repetido. Há trechos que se repetem?
+Não.	
+•	Falta de separação de responsabilidades. Uma função faz muitas coisas diferentes?
+Não, as funções do sistema estão com responsabilidades bem definidas. 
+
+
+2.	Design de Structs
+
+Para cada entidade do seu sistema, pergunte-se:
+•	Que informações caracterizam essa entidade?
+A entidade no qual criamos uma struct foi “Aluno”.  As informações que as caracterizavam são: nome, idade e matrícula. 
+•	Essas informações sempre andam juntas?	
+Sim, pois são necessárias para que seja realizado o cadastro do aluno. 
+•	Faz sentido agrupar essas informações em uma única estrutura?
+     Sim, pois são informações necessárias e fundamentais para que o sistema funcione, tendo em conta que ele é um sistema para a realização de cadastros em determinados cursos. Desse modo, as informações são usadas ao mesmo tempo e elas agrupadas na mesma estrutura pode fazer com que o código fique mais objetivo e simplificado.
